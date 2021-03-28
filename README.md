@@ -32,7 +32,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 # Browser view
-<img src="src/assets/images/browser.JPG" width="600" />
+![](src/assets/images/browser1.png)
 
 
 # Mobile view
