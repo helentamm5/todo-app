@@ -1,0 +1,53 @@
+<div class="todo__header">
+  <h1 class="todo__header__title">{{'TODOS_HEADER' | translate}}</h1>
+
+  <div class="todo__header__filters">
+    <button id="all-button"
+            class="todo__header__filters__item {{currentFilter === null ? 'filter-active': ''}}"
+            (click)="setFilter(null)"> {{'ALL_FILTER' | translate}}
+    </button>
+    <button id="active-button"
+            class="todo__header__filters__item {{!currentFilter && currentFilter !== null ? 'filter-active': ''}}"
+            (click)="setFilter(false)">{{'ACTIVE_FILTER' | translate}}
+    </button>
+    <button id="done-button"
+            class="todo__header__filters__item {{currentFilter ? 'filter-active': ''}}"
+            (click)="setFilter(true)">{{'DONE_FILTER' |translate}}
+    </button>
+  </div>
+</div>
+<form class="todo-form" (submit)="handleAddTodo()">
+  <div class="input-div">
+    <!--suppress HtmlFormInputWithoutLabel -->
+    <input type="text"
+           name="inputTodo"
+           placeholder="{{'ENTER_TODO' |translate}}"
+           class="todo-input form-control"
+           [(ngModel)]="inputTodo"/>
+    <button type="submit" value="Add Todo" class="todo-submit">{{'ADD_TODO' | translate}}</button>
+  </div>
+  <p *ngIf="errorMessage" class="invalid-input">{{errorMessage}}</p>
+</form>
+
+<div class="todo__list">
+  <ng-container *ngFor="let todo of todos;"
+                class="todo">
+    <div *ngIf="todo.completed == this.currentFilter || this.currentFilter == null">
+      <div class="todo-content">
+        <div class="todo-header">
+          <p (click)="toggleDone(todo)"
+             class="todo-header-title {{todo.completed ? 'completed' : 'active'}}">{{formatStatus(todo) | translate}}</p>
+          <button class="todo-delete" (click)="deleteTodo(todo)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </div>
+
+        <div class="todo-info"><p
+          class="todo-info-text {{ (todo.completed ? 'done' : '')}}">
+          {{trimAndCapitalizeString(todo.content)}}
+        </p></div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+

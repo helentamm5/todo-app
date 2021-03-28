@@ -1,0 +1,10 @@
+{
+  "TODOS_HEADER": "Todos",
+  "DONE_FILTER": "Done",
+  "ACTIVE_FILTER": "Active",
+  "ALL_FILTER": "All",
+  "ENTER_TODO": "Enter todo...",
+  "ADD_TODO": "Add",
+  "COMPLETED": "Completed",
+  "ACTIVE": "Active"
+}
