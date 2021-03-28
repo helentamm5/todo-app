@@ -9,7 +9,7 @@ Data is stored in local storage.
 # Styling
 Custom CSS, Angular Material for icons.
 
-# Mobile friendliness
+# Mobile view
 Supported
 
 # i18N
@@ -35,5 +35,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ![](src/assets/images/browser.JPG)
 
 # Mobile view
-
+![](src/assets/images/mobile.png)
 
